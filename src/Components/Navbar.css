@@ -1,0 +1,176 @@
+/* Navbar container */
+nav {
+  background-color: #845162;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  height: 50px;
+  position: sticky;
+  top: 0; /* Ensure it sticks to the top */
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visibility */
+}
+
+/* Logo styling */
+.logo-container {
+  flex: 1;
+  margin-left: -1.5rem;
+  padding-top: 4px;
+}
+
+.logo {
+  height: 80px;
+  width: 100px;
+  border: 2px solid#ff9900;
+  border-radius: 0.75rem;
+}
+
+/* Centered nav links */
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  gap: 3rem;
+  flex: 2;
+  justify-content: center; /* Center the nav items */
+  margin: 0;
+  padding: 0;
+}
+
+/* List items */
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: #ff9900; /* Amazon's accent color */
+}
+
+/* Logout button styling */
+.logout {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logout span {
+  color: white;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.logout span:hover {
+  color: #ff9900;
+}
+
+/* Search bar container */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -5rem;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 40rem;
+  height: 2rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-button {
+  padding: 0.5rem 1rem;
+  margin-bottom: 10px;
+  height: 3rem;
+  border: none;
+  background-color: #b498c5;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ddd;
+  font-size: 1rem;
+}
+
+.flag-icon {
+  width: 20px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #b498c5;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.dropdown-icon {
+  font-size: 12px;
+}
+
+.dropdown-item:hover {
+  background-color: #845162;
+}
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .logo-container,
+  .nav-links,
+  .logout {
+    flex: none;
+    justify-content: center;
+    margin: 0.5rem 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

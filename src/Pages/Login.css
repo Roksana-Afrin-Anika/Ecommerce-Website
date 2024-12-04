@@ -1,0 +1,84 @@
+body {
+  background-color: #efd0cd;
+}
+
+.login-container {
+  max-width: 400px; /* Sets a fixed max width for the form container */
+  margin: 50px auto; /* Centers the form on the page */
+  padding: 2rem;
+  border: 1px solid #845162;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.login-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 90%;
+  padding: 14px;
+  font-size: 1.1rem;
+  color: #333;
+  background-color: #efd0cd;
+  border: 1px solid #845162;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem; /* Adds space between input fields */
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+  border-color: #845162;
+  background-color: #fff; /* Keep background light for readability */
+  color: #333;
+  box-shadow: 0 4px 12px rgba(145, 70, 202, 0.4); /* Purple shadow */
+  outline: none; /* Removes default blue outline */
+}
+
+.login-container button[type="submit"] {
+  width: 97%;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #845162;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(145, 70, 202, 0.4); /* Shadow for depth */
+}
+
+.login-container button[type="submit"]:hover {
+  background-color: #845162;
+  box-shadow: 0 6px 16px rgba(115, 47, 191, 0.5); /* Slightly larger shadow */
+  transform: translateY(-3px); /* Lifts the button on hover */
+}
+
+.login-container button[type="submit"]:active {
+  background-color: #5b2399;
+  box-shadow: 0 3px 10px rgba(91, 35, 153, 0.4);
+  transform: translateY(1px); /* Lowers slightly on click */
+}
+
+/* Error and success message styling */
+.login-container p {
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.login-container p[style*="color: red"] {
+  color: red;
+}
+
+.login-container p[style*="color: green"] {
+  color: green;
+}

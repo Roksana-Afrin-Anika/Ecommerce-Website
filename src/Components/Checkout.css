@@ -1,0 +1,103 @@
+/* Container and Page Layout */
+.checkout-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 2rem;
+  background-color: #f8f9fa; /* Light background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.checkout-container h3 {
+  font-size: 1.5rem;
+  color: #555;
+  margin-top: 1.5rem;
+}
+
+/* Error and Success Messages */
+.error-message,
+.success-message {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.error-message {
+  color: #b71c1c;
+  background-color: #ffebee;
+}
+
+.success-message {
+  color: #1b5e20;
+  background-color: #e8f5e9;
+}
+
+/* Cart List Styling */
+.cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.cart-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+}
+
+.cart-list .quantity {
+  font-weight: bold;
+  color: #555;
+}
+
+.invalid {
+  color: #b71c1c; /* Red color for invalid items */
+}
+
+/* Total Amount Styling */
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Form and Inputs */
+form {
+  margin-top: 1.5rem;
+}
+
+label {
+  font-size: 1rem;
+  color: #333;
+}
+
+select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+/* Button Styling */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #703ac1; /* Primary color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #703ac1; /* Darker blue on hover */
+}

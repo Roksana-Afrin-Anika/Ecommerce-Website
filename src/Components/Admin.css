@@ -1,0 +1,142 @@
+.admin-container {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin-left: 300px;
+}
+.admin-container h2 {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+}
+
+.admin-container h3 {
+  color: #333;
+  text-align: center;
+  font-size: 24px;
+  margin: 20px 0;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+.admin-container form {
+  background-color: #ffffff;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.admin-container input[type="text"],
+.admin-container input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.admin-container button[type="submit"],
+.admin-container button[type="button"] {
+  width: 48%;
+  padding: 10px;
+  margin: 10px 1%;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.admin-container button[type="submit"] {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.admin-container button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.admin-container button[type="button"] {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.admin-container button[type="button"]:hover {
+  background-color: #c82333;
+}
+
+.admin-container ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.admin-container ul li {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-container ul li strong {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.admin-container ul li img {
+  display: block;
+  margin: 8px 0;
+  font-size: 18px;
+  max-width: 180px;
+  max-height: 150px;
+  border-radius: 4px;
+}
+
+.admin-container ul li div {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.admin-container ul li button {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-container ul li button:hover {
+  opacity: 0.8;
+}
+
+.admin-container ul li button:first-child {
+  background-color: #4caf50; /* Green for edit */
+}
+
+.admin-container ul li button:last-child {
+  background-color: #f44336; /* Red for delete */
+}
+
+/* Additional spacing and font styles */
+.admin-container ul li p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.admin-container ul li span {
+  display: block;
+  color: #777;
+  margin-top: 5px;
+  font-size: 13px;
+}
