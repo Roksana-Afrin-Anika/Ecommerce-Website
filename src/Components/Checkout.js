@@ -86,7 +86,17 @@ const Checkout = () => {
       const data = await response.json();
       setSuccessMessage("Checkout successful! Order ID: " + data.orderId);
       setError("");
+
+      // Clear cart on the backend
+      await fetch("http://localhost:3000/cart/remove", {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+      });
+
       setCartItems([]); // Clear the cart after successful checkout
+      setTotalAmount(0);
     } catch (error) {
       setError(error.message);
     }

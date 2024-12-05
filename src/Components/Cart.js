@@ -201,7 +201,10 @@ const Cart = () => {
       </div>
       <button
         className="checkout-button"
-        onClick={() => navigate("/checkout")} // Navigate to checkout
+        onClick={() => {
+          setCart([]);
+          navigate("/checkout");
+        }} // Navigate to checkout
       >
         Proceed to Checkout
       </button>
