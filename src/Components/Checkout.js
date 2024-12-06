@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Checkout.css";
 import Navbar from "./../Components/Navbar";
+import BACKEND_URL from "./config";
 
 const Checkout = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -20,7 +21,7 @@ const Checkout = () => {
     }
     const fetchCart = async () => {
       try {
-        const response = await fetch("http://localhost:3000/cart/", {
+        const response = await fetch(`${BACKEND_URL}/cart/`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -68,7 +69,7 @@ const Checkout = () => {
     console.log("Formatted Items:", formattedItems);
 
     try {
-      const response = await fetch("http://localhost:3000/payment/create", {
+      const response = await fetch(`${BACKEND_URL}/payment/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -88,7 +89,7 @@ const Checkout = () => {
       setError("");
 
       // Clear cart on the backend
-      await fetch("http://localhost:3000/cart/remove", {
+      await fetch(`${BACKEND_URL}/cart/remove`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Admin.css"; // Assuming you have CSS styles in this file
 import { useNavigate } from "react-router-dom";
 import Navbar from "./../Components/Navbar";
+import BACKEND_URL from "./config";
 
 const Admin = ({ token }) => {
   const [products, setProducts] = useState([]); // Initialize as an empty array
@@ -22,7 +23,7 @@ const Admin = ({ token }) => {
   // Fetch all products from the server
   const fetchProducts = async () => {
     try {
-      const response = await fetch("http://localhost:3000/product/", {
+      const response = await fetch(`${BACKEND_URL}/product/`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`, // Include token for authentication
@@ -62,8 +63,8 @@ const Admin = ({ token }) => {
 
     try {
       const url = isEditing
-        ? `http://localhost:3000/product/${formData.id}`
-        : "http://localhost:3000/product/";
+        ? `${BACKEND_URL}/product/${formData.id}`
+        : `${BACKEND_URL}/product/`;
       const method = isEditing ? "PUT" : "POST";
       const response = await fetch(url, {
         method: method,
@@ -103,7 +104,7 @@ const Admin = ({ token }) => {
   // Handle product deletion
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/product/${id}`, {
+      const response = await fetch(`${BACKEND_URL}/product/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,

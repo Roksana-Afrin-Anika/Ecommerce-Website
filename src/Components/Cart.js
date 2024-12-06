@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Cart.css";
 import Navbar from "./../Components/Navbar";
+import BACKEND_URL from "./config";
 const Cart = () => {
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +18,7 @@ const Cart = () => {
     // Fetch the cart items on component mount
     const fetchCart = async () => {
       try {
-        const response = await fetch("http://localhost:3000/cart/", {
+        const response = await fetch(`${BACKEND_URL}/cart/`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
@@ -42,7 +43,7 @@ const Cart = () => {
 
   const handleRemove = async (productId) => {
     try {
-      const response = await fetch("http://localhost:3000/cart/remove", {
+      const response = await fetch(`${BACKEND_URL}/cart/remove`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
@@ -68,7 +69,7 @@ const Cart = () => {
 
       const updatedQuantity = Math.max(1, quantity); // Prevent going below 1
 
-      const response = await fetch("http://localhost:3000/cart/update", {
+      const response = await fetch(`${BACKEND_URL}/cart/update`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
 import Navbar from "./../Components/Navbar";
+import BACKEND_URL from "./config";
 
 const Register = ({ setToken }) => {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ const Register = ({ setToken }) => {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/user/signup", {
+      const response = await fetch(`${BACKEND_URL}/user/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

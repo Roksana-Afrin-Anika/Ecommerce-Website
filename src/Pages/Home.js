@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./../Components/Navbar";
 import "./Home.css";
 import "../App.css";
+import BACKEND_URL from "./config";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -27,7 +28,7 @@ const Home = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:3000/product/", {
+      const response = await fetch(`${BACKEND_URL}/product/`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
@@ -59,7 +60,7 @@ const Home = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/cart/add", {
+      const response = await fetch(`${BACKEND_URL}/cart/add`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,

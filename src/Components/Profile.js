@@ -3,6 +3,7 @@ import "./Profile.css";
 
 import { useNavigate } from "react-router-dom";
 import Navbar from "./../Components/Navbar";
+import BACKEND_URL from "./config";
 
 const Profile = ({ isAdmin }) => {
   const [user, setUser] = useState(null);
@@ -24,7 +25,7 @@ const Profile = ({ isAdmin }) => {
     const fetchUserProfile = async () => {
       try {
         const token = sessionStorage.getItem("token"); // Get token from sessionStorage
-        const response = await fetch("http://localhost:3000/user/profile", {
+        const response = await fetch(`${BACKEND_URL}/user/profile`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`, // Send token in the authorization header
@@ -71,17 +72,14 @@ const Profile = ({ isAdmin }) => {
         ...passwordData,
       };
 
-      const response = await fetch(
-        "http://localhost:3000/user/profile/update",
-        {
-          method: "PUT",
-          headers: {
-            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updatedData),
-        }
-      );
+      const response = await fetch(`${BACKEND_URL}/user/profile/update`, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedData),
+      });
       if (!response.ok) throw new Error("Failed to update profile");
       const data = await response.json();
       setUser(data.user);

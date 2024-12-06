@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./../Components/Navbar";
 
 import "./Login.css";
+import BACKEND_URL from "./config";
 
 const Login = ({ setToken }) => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Login = ({ setToken }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/user/login", {
+      const response = await fetch(`${BACKEND_URL}/user/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -36,15 +37,12 @@ const Login = ({ setToken }) => {
       setError("");
 
       // Only fetch profile if login is successful
-      const profileResponse = await fetch(
-        "http://localhost:3000/user/profile",
-        {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`, // Pass the token in the header
-          },
-        }
-      );
+      const profileResponse = await fetch(`${BACKEND_URL}/user/profile`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`, // Pass the token in the header
+        },
+      });
       const profileData = await profileResponse.json();
       if (profileResponse.ok) {
         // Navigate based on user role
