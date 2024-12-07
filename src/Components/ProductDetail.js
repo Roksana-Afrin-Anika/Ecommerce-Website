@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ProductDetail.css";
 import Navbar from "./../Components/Navbar";
-import BACKEND_URL from "./config";
+import BACKEND_URL from "./Components/config";
 const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -10,7 +10,7 @@ const ProductDetail = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("http://localhost:3000/product/", {
+      const response = await fetch(`${BACKEND_URL}/product/`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
@@ -29,7 +29,7 @@ const ProductDetail = () => {
 
   const handleAddToCart = async (productId) => {
     try {
-      const response = await fetch("http://localhost:3000/cart/add", {
+      const response = await fetch(`${BACKEND_URL}/cart/add`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,

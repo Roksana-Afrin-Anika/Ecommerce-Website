@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Checkout.css";
 import Navbar from "./../Components/Navbar";
-import BACKEND_URL from "./config";
+import BACKEND_URL from "./Components/config";
 
 const Checkout = () => {
   const [cartItems, setCartItems] = useState([]);

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./../Components/Navbar";
 
 import "./Login.css";
-import BACKEND_URL from "./config";
+import BACKEND_URL from "./Components/config";
 
 const Login = ({ setToken }) => {
   const navigate = useNavigate();
