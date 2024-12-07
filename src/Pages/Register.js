@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
 import Navbar from "./../Components/Navbar";
-import BACKEND_URL from "./Components/config";
+import BACKEND_URL from "../Components/config";
 
 const Register = ({ setToken }) => {
   const navigate = useNavigate();

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Cart.css";
 import Navbar from "./../Components/Navbar";
-import BACKEND_URL from "./Components/config";
+import BACKEND_URL from "../Components/config";
 const Cart = () => {
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);

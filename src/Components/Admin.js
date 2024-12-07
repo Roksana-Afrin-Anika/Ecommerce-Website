@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Admin.css"; // Assuming you have CSS styles in this file
 import { useNavigate } from "react-router-dom";
 import Navbar from "./../Components/Navbar";
-import BACKEND_URL from "./Components/config";
+import BACKEND_URL from "../Components/config";
 
 const Admin = ({ token }) => {
   const [products, setProducts] = useState([]); // Initialize as an empty array
