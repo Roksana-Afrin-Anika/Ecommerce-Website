@@ -60,20 +60,7 @@ nav {
   color: #ff9900; /* Accent color */
 }
 
-/* Button for About Us section */
-.about-us-button {
-  color: white;
-  background: transparent;
-  border: none;
-  font-size: 1.2rem;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-}
 
-.about-us-button:hover {
-  color: #ff9900; /* Accent color */
-}
 
 /* Logout button styling */
 .logout {
