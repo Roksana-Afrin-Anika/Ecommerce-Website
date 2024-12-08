@@ -70,7 +70,7 @@ const Navbar = ({ searchQuery, setSearchQuery, onAboutUsClick }) => {
 
       <ul className="nav-links">
         <li>
-          <button onClick={onAboutUsClick}>{t("aboutUs")}</button>
+          <button className="about-us-button" onClick={onAboutUsClick}>{t("aboutUs")}</button>
         </li>
         <li>
           <Link to="/login">{t("login")}</Link>
