@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./../Components/Navbar";
 import BACKEND_URL from "../Components/config";
 
-const Profile = ({ isAdmin }) => {
+const Profile = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,11 +24,10 @@ const Profile = ({ isAdmin }) => {
     }
     const fetchUserProfile = async () => {
       try {
-        const token = sessionStorage.getItem("token"); // Get token from sessionStorage
         const response = await fetch(`${BACKEND_URL}/user/profile`, {
           method: "GET",
           headers: {
-            Authorization: `Bearer ${token}`, // Send token in the authorization header
+            Authorization: `Bearer ${token}`,
           },
         });
 
@@ -37,22 +36,24 @@ const Profile = ({ isAdmin }) => {
         }
 
         const data = await response.json();
-        setUser(data.user); // Assuming the response has a user object
+        setUser(data.user);
       } catch (error) {
         console.error("Error fetching profile:", error);
-        // Handle error appropriately, e.g., redirect to login if unauthorized
       } finally {
-        setLoading(false); // Set loading to false after fetch
+        setLoading(false);
       }
     };
     fetchUserProfile();
   }, []);
+
   if (loading) {
-    return <div>Loading...</div>; // Handle loading state appropriately
+    return <div>Loading...</div>;
   }
+
   if (!user) {
-    return <div>No user data available.</div>; // Handle case when user data is not available
+    return <div>No user data available.</div>;
   }
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -80,7 +81,9 @@ const Profile = ({ isAdmin }) => {
         },
         body: JSON.stringify(updatedData),
       });
+
       if (!response.ok) throw new Error("Failed to update profile");
+
       const data = await response.json();
       setUser(data.user);
       setIsEditing(false);
@@ -89,21 +92,19 @@ const Profile = ({ isAdmin }) => {
       console.error("Error updating profile:", error);
     }
   };
+
   const Sidebar = ({ onLogout }) => (
     <div className="sidebar">
       <ul>
-        {isAdmin ? (
-          <>
-            <li>
-              <button onClick={() => navigate("/admin")}>Dashboard</button>
-            </li>
-          </>
-        ) : (
-          <>
-            <li>
-              <button onClick={() => navigate("/cart")}>Cart</button>
-            </li>
-          </>
+        {user?.role === "admin" && (
+          <li>
+            <button onClick={() => navigate("/admin")}>Dashboard</button>
+          </li>
+        )}
+        {user?.role !== "admin" && (
+          <li>
+            <button onClick={() => navigate("/cart")}>Cart</button>
+          </li>
         )}
         <li>
           <button onClick={onLogout}>Logout</button>
@@ -205,3 +206,4 @@ const Profile = ({ isAdmin }) => {
 };
 
 export default Profile;
+
