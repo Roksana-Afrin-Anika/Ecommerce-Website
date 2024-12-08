@@ -53,6 +53,20 @@ nav {
 .nav-links li a:hover {
   color: #ff9900; /* Amazon's accent color */
 }
+/* Button for About Us section */
+.about-us-button {
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.about-us-button:hover {
+  color: #ff9900; /* Amazon's accent color */
+}
 
 /* Logout button styling */
 .logout {
