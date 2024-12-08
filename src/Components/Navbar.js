@@ -4,7 +4,7 @@ import "./Navbar.css";
 import { useTranslation } from "react-i18next";
 import logo from "./../assests/Logo.webp";
 
-const Navbar = ({ searchQuery, setSearchQuery }) => {
+const Navbar = ({ searchQuery, setSearchQuery, onAboutUsClick }) => {
   const { i18n, t } = useTranslation();
   const [language, setLanguage] = useState("EN");
 
@@ -70,7 +70,7 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
 
       <ul className="nav-links">
         <li>
-          <a href="#about-us">{t("aboutUs")}</a>
+          <button onClick={onAboutUsClick}>{t("aboutUs")}</button>
         </li>
         <li>
           <Link to="/login">{t("login")}</Link>
@@ -84,3 +84,4 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
 };
 
 export default Navbar;
+
