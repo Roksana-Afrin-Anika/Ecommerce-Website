@@ -42,7 +42,7 @@ function App() {
               path="/profile"
               element={
                 <ProtectedRoute>
-                  <Profile isAdmin={true} />
+                  <Profile />
                 </ProtectedRoute>
               }
             />
